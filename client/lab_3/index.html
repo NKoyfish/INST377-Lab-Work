@@ -11,8 +11,7 @@
   <body>
     <div class='menu-container'>
         <div class='menu'>
-            <div class='date'>Aug 14, 2016</div>
-            
+            <div id='date'>s</div>
             <div class='signup'><div class ='menu-links'><a href='database.html'>Database Demos</a></div></div>
             <div class='login'><div class ='menu-links'><a href='index.html'>Main Page</a></div></div>
           </div>
@@ -49,5 +48,13 @@
         <div class='footer-item footer-two'><span>footer-item 2</span></div>
         <div class='footer-item footer-three'><span>footer-item 3</span></div>
       </div>
+      <script type = 'text/javascript'>
+        const date = new Date();
+        const day = date.getDate();
+        const month = date.getMonth()+1;
+        const year = date.getFullYear();
+        var d = month+ '/' + day + '/' + year;
+        document.getElementById('date').innerHTML = d;
+    </script>
   </body>
 </html>
