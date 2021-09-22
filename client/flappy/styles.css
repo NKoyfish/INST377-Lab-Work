@@ -9,10 +9,12 @@ body {
 }
 .border-left {
     width: 80px;
-    height: 790px;
+    z-index: +2;
+    height: 810px;
     position:  absolute;
     background-color: white;
-    z-index: +2;
+    left: 0px;
+    top: -20px
 }
 .border-right {
     width: 80px;
@@ -29,12 +31,14 @@ body {
     background-color: white;
     z-index: +2;
     top: -50px;
+    left: -50px;
 }
 
 .sky {
     background-image:url('fb-game-background.png');
     width: 500px;
     height: 580px;
+    background-repeat: repeat-x;
     position: absolute;
 }
 .ground {
@@ -72,14 +76,39 @@ body {
     left: 80px;
     position:  absolute;
 }
-.ground-moving {
-    position: absolute;
-    top: 580px;
-    height: 150px;
-    background-image: url('bottom-background.png');
-    background-repeat: repeat-x;
-    animation: slideright 100s infinite linear;
-    -webkit-animation: slideright 100s infinite linear;
-    width: 100%;
-    z-index: +1;
+
+@keyframes slideright {
+    from {
+        background-position: 10000%;
+    }
+    to {
+        background-position: 0%;
+    }
   }
+  
+  @-webkit-keyframes slideright {
+    from {
+        background-position: 10000%;
+    }
+    to {
+        background-position: 0%;
+    }
+  }
+  .ground-container {
+    height: 150px;
+    width: 580px;
+    left: 80px;
+    position:  absolute;
+}
+
+.ground-moving {
+  position: absolute;
+  top: 580px;
+  height: 150px;
+  background-image: url('bottom-background.png');
+  background-repeat: repeat-x;
+  animation: slideright 100s infinite linear;
+  -webkit-animation: slideright 100s infinite linear;
+  width: 100%;
+  z-index: +1;
+}
