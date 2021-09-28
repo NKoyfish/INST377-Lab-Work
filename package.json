@@ -20,11 +20,7 @@
     "body-parser": "^1.19.0",
     "chalk": "^4.1.1",
     "connect-livereload": "^0.6.1",
-<<<<<<< HEAD
     "discord.js": "^13.1.0",
-=======
-    "dotenv": "^10.0.0",
->>>>>>> 17514e1bb9519f84c7a2fb0ab664c5b893830434
     "express": "^4.17.1",
     "ffmpeg-static": "^4.4.0",
     "libsodium": "^0.7.9",
