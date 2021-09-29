@@ -3,17 +3,21 @@
     height: 600px;
     background-color: yellow;
     position: relative;
-
+    font-size: 200px;
+    text-align: center;
+    background-image: url("https://github.com/kubowania/Doodle-Jump/blob/master/background.png?raw=true");
 }
 .doodler {
     width: 60px;
-    height: 85;
-    background-color: red;
+    height: 85px;
+    
+    background-image: url("https://github.com/kubowania/Doodle-Jump/blob/master/doodler-guy.png?raw=true");
     position: absolute;
+  
 }
 .platform {
     width: 85px;
     height: 16px;
-    background-color: green;
     position: absolute;
+    background-image: url("https://github.com/kubowania/Doodle-Jump/blob/master/platform.png?raw=true");
 }
