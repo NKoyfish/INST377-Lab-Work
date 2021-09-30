@@ -3,25 +3,52 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+html {
+  height: 100%;
+}
 body {
   margin: 0;
   padding: 0;
   font-family: ‘Segoe UI’, Candara, ‘Bitstream Vera Sans’, ‘DejaVu Sans’,
     ‘Bitsream Vera Sans’, ‘Trebuchet MS’, Verdana, ‘Verdana Ref’, sans-serif;
-  background-color: darkslategray;
+  background-color: rgb(47, 185, 185);
+  min-height: 100%;
+  min-width: 100%;
 }
 
 /* Page Layout */
 .columns {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 }
 
 .wrapper {
   display: flex;
+
 }
 .container {
   max-width: 960px;
   margin-top: 25px;
+}
+.big {
+  font-size: 50px;
+  background-color: rgb(51, 53, 211);
+  text-align: left;
+  color:black;
+  border-radius: 10px;
+}
+.title {
+  background-color: rgb(8, 4, 44);
+  color: aliceblue;
+  font-family: cursive;
+}
+.coolnav {
+  background-color: rgb(16, 75, 67);
+  color:black;
+}
+.centerCol {
+  padding-left: 15%;
+  padding-right: 15%;
 }

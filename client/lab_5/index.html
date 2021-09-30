@@ -1,12 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nicholas Koy: Lab 5 - Html forms</title>
+    <meta charset='UTF-8' />
+    <title>Speaker Submission</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel='stylesheet' href='styles.css' />
 </head>
+
 <body>
-    
+    <h1 class="coolnav">HTML Forms</h1>
+    <div class="container">
+        <div class="columns is-centered" id="corners">
+            <div class="column is-full">
+                <div class= "box title">Nicholas Koy</div>
+            </div>
+        </div>
+        <div class="centerCol">
+            <div class="columns">
+                <div class="column is-one-third">
+                    <div class="block">
+                        <form action ='/api' method='get' class="box">
+                            <div class="field">
+                                <label class="label">First Name</label>
+                                <div class="control">
+                                    <input class="input" type="text">
+                                </div>
+                            </div>
+
+                            <div class="field">
+                                <label class="label">Food Preference</label>
+                                <div class="control">
+                                    <input class="input" type="text">
+                                </div>
+                            </div>
+                            <label class="label">Veggie or Vegan?</label>
+                            <div class="control">
+                                <label class="radio">
+                                  <input type="radio" name="answer">
+                                  Yes
+                                </label>
+                                <label class="radio">
+                                  <input type="radio" name="answer">
+                                  No
+                                </label>
+                              </div>
+                            <div class = "block">
+                                <div class='form-row'>
+                                    <button class="button is-primary">Submit</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            <div class="column is-two-thirds">
+                <div class="box">
+                    <h3 class="xd">This is going to be something in two weeks.</h1>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>
