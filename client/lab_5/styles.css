@@ -22,6 +22,7 @@ body {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  font-family: inherit;
 }
 
 .wrapper {
@@ -42,7 +43,7 @@ body {
 .title {
   background-color: rgb(8, 4, 44);
   color: aliceblue;
-  font-family: cursive;
+  font-family: inherit;
 }
 .coolnav {
   background-color: rgb(16, 75, 67);

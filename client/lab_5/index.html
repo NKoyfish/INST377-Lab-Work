@@ -3,7 +3,7 @@
 
 <head>
     <meta charset='UTF-8' />
-    <title>Speaker Submission</title>
+    <title>Nicholas Koy: Lab 5-Forms</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <link rel='stylesheet' href='styles.css' />
 </head>
@@ -22,29 +22,34 @@
                     <div class="block">
                         <form action ='/api' method='get' class="box">
                             <div class="field">
-                                <label class="label">First Name</label>
-                                <div class="control">
-                                    <input class="input" type="text">
+                                <div class = "form-row">
+                                    <label for="name" class="name">First Name</label>
+                                    <div class="control">
+                                        <input id="name" name="name" type="text">
+                                    </div>
                                 </div>
                             </div>
 
                             <div class="field">
-                                <label class="label">Food Preference</label>
+                                <label for="food" class="food">Food Preference</label>
                                 <div class="control">
-                                    <input class="input" type="text">
+                                    <input id="food" name="food" type="text">
                                 </div>
                             </div>
-                            <label class="label">Veggie or Vegan?</label>
-                            <div class="control">
-                                <label class="radio">
-                                  <input type="radio" name="answer">
-                                  Yes
-                                </label>
-                                <label class="radio">
-                                  <input type="radio" name="answer">
-                                  No
-                                </label>
-                              </div>
+                            <fieldset class='legacy-form-row'>
+                                <legend>Veggie or Vegan?</legend>
+                                <input id='yes'
+                                       name='yes-no'
+                                       type='radio'
+                                       value='yes' />
+                                <label for='yes' class='radio-label'>Yes</label>
+                                <input id='no'
+                                       name='yes-no'
+                                       type='radio'
+                                       value='workshop'
+                                       checked />
+                                <label for='no' class='radio-label'>No</label>
+                              </fieldset>
                             <div class = "block">
                                 <div class='form-row'>
                                     <button class="button is-primary">Submit</button>
