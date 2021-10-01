@@ -1,71 +1,65 @@
 <!DOCTYPE html>
 <html lang='en'>
+<div class="wrapper">
 
-<head>
-    <meta charset='UTF-8' />
-    <title>Nicholas Koy: Lab 5-Forms</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
-    <link rel='stylesheet' href='styles.css' />
-</head>
-
-<body>
-    <h1 class="coolnav">HTML Forms</h1>
-    <div class="container">
-        <div class="columns is-centered" id="corners">
-            <div class="column is-full">
-                <div class= "box title">Nicholas Koy</div>
+    <head>
+        <meta charset='UTF-8' />
+        <title>Nicholas Koy: Lab 5-Forms</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+        <link rel='stylesheet' href='styles.css' />
+    </head>
+    <body>
+        <div class="container">
+            
+            <div class="columns is-centered" id="corners">
+                <div class="column is-full">
+                    <div class="box title">Nicholas Koy</div>
+                </div>
             </div>
-        </div>
-        <div class="centerCol" style="width: 90%;">
-            <div class="columns">
-                <div class="column">
-                    <div class="block">
-                        <form action ='/api' method='get' class="box">
-                            <div class="field">
-                                <div class = "form-row">
-                                    <label for="name" class="name">First Name</label>
-                                    <div class="control">
-                                        <input id="name" name="name" type="text">
+            <div class="centerCol" style="width: 90%;">
+                <div class="columns">
+                    <div class="column">
+                        <div class="block">
+                            <form action='/api' method='get' class="box">
+                                <div class="field">
+                                    <div class="form-row">
+                                        <label for="name" class="name">First Name</label>
+                                        <div class="control">
+                                            <input id="name" name="name" type="text">
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
 
-                            <div class="field">
-                                <label for="food" class="food">Food Preference</label>
-                                <div class="control">
-                                    <input id="food" name="food" type="text">
+                                <div class="field">
+                                    <label for="food" class="food">Food Preference</label>
+                                    <div class="control">
+                                        <input id="food" name="food" type="text">
+                                    </div>
                                 </div>
-                            </div>
-                            <fieldset class='legacy-form-row'>
-                                <legend>Veggie or Vegan?</legend>
-                                <input id='yes'
-                                       name='yes-no'
-                                       type='radio'
-                                       value='yes' />
-                                <label for='yes' class='radio-label'>Yes</label>
-                                <input id='no'
-                                       name='yes-no'
-                                       type='radio'
-                                       value='workshop'
-                                       checked />
-                                <label for='no' class='radio-label'>No</label>
-                              </fieldset>
-                            <div class = "block">
-                                <div class='form-row'>
-                                    <button class="button is-primary">Submit</button>
+                                <fieldset class='legacy-form-row'>
+                                    <legend>Veggie or Vegan?</legend>
+                                    <input id='yes' name='yes-no' type='radio' value='yes' />
+                                    <label for='yes' class='radio-label'>Yes</label>
+                                    <input id='no' name='yes-no' type='radio' value='no' checked />
+                                    <label for='no' class='radio-label'>No</label>
+                                </fieldset>
+                                <div class="block">
+                                    <div class='form-row'>
+                                        <button class="button is-primary">Submit</button>
+                                    </div>
                                 </div>
-                            </div>
-                        </form>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="column is-two-thirds">
+                        <div class="box">
+                            <h3 class="xd">This is going to be something in two weeks.</h1>
+                        </div>
                     </div>
                 </div>
-            <div class="column is-two-thirds">
-                <div class="box">
-                    <h3 class="xd">This is going to be something in two weeks.</h1>
-                </div>
-            </div>
             </div>
         </div>
-    </div>
-</body>
+    </body>
+</div>
 
 </html>
