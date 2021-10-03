@@ -1,0 +1,47 @@
+<div class ="body">
+<div class="leaf1"></div>
+<div class="leaf2"></div>
+<div class="leaf3"></div>
+</div>
+<style>
+  .body {
+      display: flex;
+    background:#0B2429;
+    width: 400px;
+    height: 300px;
+  }
+  .leaf1{
+    display:flex;
+    position:relative;
+    width:150px;
+    height: 150px;
+    background:#1A4341;
+    border-radius: 66% 0 66% 0;
+    left:20%;
+    top:25%
+  }
+  .leaf2{
+    display:flex;
+    position:relative;
+    justify-self: center;
+    align-self: center;
+    width:150px;
+    height: 150px;
+    background:#998235;
+    border-radius: 66% 0 66% 0;
+  
+    z-index:2
+  }
+  .leaf3{
+    display:flex;
+    position:relative;
+    justify-self: center;
+    align-self: center;
+    width:150px;
+    height: 150px;
+    background:#F3AC3C;
+      border-radius: 66% 0 66% 0;
+    z-index:3;
+    left:-20%;
+  }
+</style>

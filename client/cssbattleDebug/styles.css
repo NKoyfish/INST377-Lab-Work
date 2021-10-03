@@ -1,0 +1,22 @@
+h1{
+  vertical-align: center;
+  align-self: center;
+  background: rgba(255, 255, 255, 0.376);
+}
+.flex {
+  display: flex;
+  justify-self: center;
+  flex-direction: column;
+  align-self: center;
+}
+.challengeList
+{
+  align-self: center;
+  background: rgba(255, 255, 255, 0.376);
+  border: black;
+}
+body{
+  background-image: url("https://source.unsplash.com/user/erondu/1600x900");
+  background-size: 100%;
+}
+li{ list-style-type: none; }
