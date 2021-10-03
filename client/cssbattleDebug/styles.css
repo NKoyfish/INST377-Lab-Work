@@ -1,22 +1,23 @@
-h1{
-  vertical-align: center;
-  align-self: center;
-  background: rgba(255, 255, 255, 0.376);
-}
+
 .flex {
   display: flex;
   justify-self: center;
   flex-direction: column;
   align-self: center;
+  background-color: rgba(240, 248, 255, 0.63);
+  margin-left: 40%;
+  margin-right: 40%;
+  padding-bottom: 10%;
+  border-radius: 15%;
+  border: 10px black;
+  outline: 10px black;
 }
 .challengeList
 {
   align-self: center;
-  background: rgba(255, 255, 255, 0.376);
-  border: black;
 }
 body{
-  background-image: url("https://source.unsplash.com/user/erondu/1600x900");
+  background-image: url("https://source.unsplash.com/daily");
   background-size: 100%;
 }
 li{ list-style-type: none; }
