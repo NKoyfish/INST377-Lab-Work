@@ -1,0 +1,71 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  html {
+    height: 100%;
+  }
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: ‘Segoe UI’, Candara, ‘Bitstream Vera Sans’, ‘DejaVu Sans’,
+      ‘Bitsream Vera Sans’, ‘Trebuchet MS’, Verdana, ‘Verdana Ref’, sans-serif;
+    background-color: rgb(47, 185, 185);
+    min-height: 100%;
+    min-width: 100%;
+  }
+  
+  /* Page Layout */
+  .columns {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    font-family: inherit;
+  }
+
+  .block {
+    padding: 2%;
+    background-color: aliceblue;
+    border-radius: 15px;
+  }
+  
+  .wrapper {
+    display: flex;
+  
+  }
+  li:nth-child(odd){
+    background:#07252ab4;
+    color:rgb(164, 204, 216);
+    border-radius: 10px;
+    font-weight: bold;
+    width: 100%;
+    }
+  input {
+    padding: 2%;
+    background-color: aliceblue;
+    border-radius: 15px;
+    width: 100%;
+  }
+  .container {
+    margin-left: 10px;
+    max-width: 960px;
+    margin-top: 32px;
+  }
+  .big {
+    font-size: 50px;
+    background-color: rgb(51, 53, 211);
+    text-align: left;
+    color:black;
+    border-radius: 10px;
+  }
+  .title {
+    background-color: rgb(8, 4, 44);
+    color: aliceblue;
+    font-family: inherit;
+  }
+  
+  .centerCol {
+    padding-left: 10%;
+  }
