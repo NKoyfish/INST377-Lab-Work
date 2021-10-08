@@ -6,7 +6,7 @@
     <span>
         <p>Restaurants: <span class="count">0</p>
     </span>
-    <span><a href="./lab_7/index.html">Lab 7</a></span>
+    <span><a href="index.html">Lab 7</a></span>
 </nav>
 <div class="wrapper">
 
@@ -33,7 +33,7 @@
                 </div>
             </div>
             <div class="column">
-                <input type="text" class="search" placeholder="Category, Name, Address, City, or Zip">
+                <input type="text" class="search" placeholder="Category, Name, or Zip">
             </div>
             <div id="mapid">
 
@@ -71,7 +71,7 @@
                             return restaur.filter((search) => {
                                 const regex = new RegExp(wordToMatch, "gi");
                                 return search.name.match(regex) || search.category.match(regex) ||
-                                    search.address_line_1.match(regex) || search.city.match(regex) || search.zip.match(regex);
+                                search.zip.match(regex);
                             });
                         }
                         function displayMatches(event) {
