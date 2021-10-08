@@ -77,6 +77,10 @@ input {
   max-width: 960px;
   margin-top: 10px;
 }
+.button {
+  user-select: text;
+  cursor: text;
+}
 
 .title {
   background-color: #7b1e7a;
