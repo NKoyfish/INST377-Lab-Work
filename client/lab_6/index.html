@@ -50,7 +50,7 @@
 </div>
 </div>
 <script>
-
+    let hashMap = new Map();
     var mymap = L.map('mapid').setView([38.974, -76.86609], 13);
     L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
         attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
@@ -86,19 +86,27 @@
             });
         }
         function hello(){
-            console.log(this)
+            console.log(this.innerHTML,'stuff')
         }
         function displayMatches(event) {
             console.log(event.value);
+            hashMap = new Map()
+            count2 = 0
             const matchArray = findMatches(event.target.value, restaur);
+            matchArray.forEach(ele => {
+                if (ele.geocoded_column_1 !== undefined) hashMap.set(count2++,ele.geocoded_column_1.coordinates)
+            })
+            count2 = 0;
             const html = matchArray
-                .map((search) => `<li class="libutt" style ="width:100%">${search.name}<br>${search.category}
-      <br>${search.address_line_1}
-      <br>${search.city}
-      <br>${search.zip}<br></li>`)
+            .map((search) => `<li class="libutt"  style ="width:100%"> <span class="id${++count2}">${search.name}<br>${search.category}
+            <br>${search.address_line_1}
+            <br>${search.city}
+            <br>${search.zip}<br>
+            </span></li>`)
                 .join('');
             suggest.innerHTML = html;
             restCount.innerHTML = matchArray.length
+            //assigns each new list item a unique id
             
         }
 
@@ -110,8 +118,9 @@
             } else {
                 displayMatches(evt);
             }
-        });
-    }
+        });     
+    } //end of async
+    
     window.onload = windowActions;
 
 </script>

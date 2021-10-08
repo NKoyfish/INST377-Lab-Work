@@ -187,28 +187,34 @@
 }
 
 
-
+.lastClick {
+  z-index: 1;
+  font-weight: bold;
+  box-shadow: 0 0 0 3px green;
+  background-color: orange;
+  border: 10px green;
+  border-style: solid;
+  border-width: thick;
+}
 
 .carousel__button--prev {
-  margin-left: 20px;
+  
+  width: 40px;
+  text-align: center;
   display: flex;
-  width: 100%;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: #D6E9FE;
   border: none;
   cursor: pointer;
+  border-radius: 5px;
   font-style: bold;
 }
 .carousel__button--next {
-  margin-right: 20px;
+ 
   display: flex;
-  width: 100%;
-  position: absolute;
+  width: 40px;
+  text-align: center;
   cursor: pointer;
-  top: 50%;
-  transform: translateY(-50%);
   border: none;
   font-style: bold;
+  border: none;
+  border-radius: 5px;
 }
