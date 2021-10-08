@@ -37,9 +37,10 @@
             </div>
             <div id="mapid">
 
-                <script>
+        <script>
+                    let fullyUnique = []
                     let layerG = []
-                    var mymap = L.map('mapid').setView([51.505, -0.09], 13);
+                    var mymap = L.map('mapid').setView([38.974, -76.86609], 13);
                     L.tileLayer('https://api.maptiler.com/maps/toner/{z}/{x}/{y}.png?key=0im19NFqvOVkTZzwiWhj', {
                         attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>',
                         maxZoom: 18,
@@ -54,7 +55,7 @@
                             "https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json";
                         const request = await fetch(endpoint)
                         const restaur = await request.json();
-                        
+                        let pointMap = []
                         const searchInput = document.querySelector(".search");
                         const suggest = document.querySelector(".xd");
                         const restCount = document.querySelector('.count');
@@ -94,15 +95,27 @@
                                 else return undefined
                             }
                             //
-                            let pointMap = matchArray.map(item => getPoint(item))
-                            console.log(pointMap)
-                            uniqueArray = [...new Set(pointMap)]
+                            pointMap = matchArray.map(item => getPoint(item))
                             
-                            uniqueArray.forEach(ele => {
-                                if (ele !== undefined) L.marker(ele).addTo(mymap)
-                            })
+                            
                         }
+                        function plotResults(){
+                            pointMap.forEach(ele => {
+                                if (ele !== undefined){
 
+                                    if(!fullyUnique.includes(ele)){
+                                        fullyUnique.push(ele)
+                                        L.marker(ele).addTo(mymap)
+                                       
+                                    }
+                                   
+                                }
+                                
+                            })
+                            console.log(fullyUnique.length)
+                        }
+                        buttonClick = document.querySelector('.click')
+                        buttonClick.addEventListener('click' , plotResults)
                         searchInput.addEventListener("change", displayMatches);
                         searchInput.addEventListener("keyup", (evt) => {
                             if (searchInput.value === "" || searchInput.value === undefined) {
@@ -114,9 +127,13 @@
                         });
                     }
                     window.onload = windowActions;
-                </script>
+                    function getMarkers(){
+                        console.log(fullyUnique)
+                    }
+        </script>
 
             </div>
+            <div class="click"><button class="plot">Plot Markers></button></div>
         </div>
         <div class="column is-two-thirds" style="margin-top: -2px;">
             <div class="box scroll">

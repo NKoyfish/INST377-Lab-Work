@@ -78,7 +78,8 @@ input {
   margin-top: 10px;
 }
 .button {
-
+  user-select: text;
+  cursor: text;
 }
 
 .title {
@@ -115,7 +116,11 @@ input {
   overflow-x: hidden;
 }
 #mapid { 
-  border-radius: 15px;
   height: 500px; 
   width: 100%;
+}
+.butPlot{
+  display: inline-flex;
+  position: relative;
+  align-self: center;
 }

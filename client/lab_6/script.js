@@ -32,10 +32,10 @@ async function windowActions() {
     suggest.innerHTML = html;
     restCount.innerHTML = matchArray.length
   }
-
-  searchInput.addEventListener("change", displayMatches);
-  searchInput.addEventListener("keyup", (evt) => {
-    if (searchInput.value === "" || searchInput.value  === undefined) {
+ 
+  searchInput.addEventListener('change', displayMatches);
+  searchInput.addEventListener('keyup', (evt) => {
+    if (searchInput.value === '' || searchInput.value  === undefined) {
       restCount.innerHTML  = 0
       suggest.innerHTML = 'This is going to be something in two weeks and scrollable. <br><h1>Scrollable!!!</h1>';
     } else {
