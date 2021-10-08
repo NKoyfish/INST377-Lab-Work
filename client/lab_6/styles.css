@@ -4,7 +4,6 @@
   box-sizing: border-box;
 }
 nav{
-  
   display: flex;
   text-align-last: left;
   justify-content: space-evenly;

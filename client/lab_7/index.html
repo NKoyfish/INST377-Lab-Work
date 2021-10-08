@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang='en'>
+<nav>
+    <span><a href="../index.html">Back</a></span>
+    <span><a href="../lab_6/index.html">Lab 6</a></span>
+    <span>
+        <p>Restaurants: <span class="count">0</p>
+    </span>
+    <span><a href="./lab_7/index.html">Lab 7</a></span>
+</nav>
+<div class="wrapper">
+
+    <head>
+        <meta charset='UTF-8' />
+        <title>Nicholas Koy: Lab 7</title>
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+        <link rel='stylesheet' href='styles.css' />
+
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+            integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+            crossorigin="" />
+        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+            integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+            crossorigin=""></script>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="columns is-centered" id="corners">
+                <div class="column is-full">
+                    <div class="box title">Nicholas Koy: JSON to Map Markers</div>
+                </div>
+            </div>
+            <div class="column">
+                <input type="text" class="search" placeholder="Category, Name, Address, City, or Zip">
+            </div>
+            <div id="mapid">
+
+                <script>
+                    let layerG = []
+                    var mymap = L.map('mapid').setView([51.505, -0.09], 13);
+                    L.tileLayer('https://api.maptiler.com/maps/toner/{z}/{x}/{y}.png?key=0im19NFqvOVkTZzwiWhj', {
+                        attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>',
+                        maxZoom: 18,
+                        id: 'mapbox/streets-v11',
+                        tileSize: 512,
+                        zoomOffset: -1,
+                        accessToken: 'pk.eyJ1IjoibmtveWZpc2giLCJhIjoiY2t1aHRtZGgzMTcyOTJ2dDl1dDdpbjRtMiJ9.acTEbwBGCgecw_xcjJdubA'
+                    }).addTo(mymap);
+
+                    async function windowActions() {
+                        const endpoint =
+                            "https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json";
+                        const request = await fetch(endpoint)
+                        const restaur = await request.json();
+                        
+                        const searchInput = document.querySelector(".search");
+                        const suggest = document.querySelector(".xd");
+                        const restCount = document.querySelector('.count');
+                        let uniqueArray = []
+                        let count = 0
+                        console.log(restaur)
+                        fetch(endpoint);
+
+                        function findMatches(wordToMatch, array) {
+                            if (!wordToMatch) {
+                                document.querySelector(".xd").innerHTML = "";
+                            }
+                            return restaur.filter((search) => {
+                                const regex = new RegExp(wordToMatch, "gi");
+                                return search.name.match(regex) || search.category.match(regex) ||
+                                    search.address_line_1.match(regex) || search.city.match(regex) || search.zip.match(regex);
+                            });
+                        }
+                        function displayMatches(event) {
+                
+                            const matchArray = findMatches(event.target.value, restaur);
+                            const html = matchArray
+                                .map((search) => `<div class="button"><li style ="width:100%">${search.name}<br>${search.category}
+      <br>${search.address_line_1}
+      <br>${search.city}
+      <br>${search.zip}<br></li></div>`)
+                                .join("");
+                            suggest.innerHTML = html;
+                            restCount.innerHTML = matchArray.length
+                            let locationArr = []
+                           
+                            function getPoint(matchArrayElement) {
+                
+                                if (matchArrayElement !== undefined && matchArrayElement.geocoded_column_1 !== undefined
+                                && matchArrayElement.geocoded_column_1.coordinates !== undefined) 
+                                    return [matchArrayElement.geocoded_column_1.coordinates[1],matchArrayElement.geocoded_column_1.coordinates[0]]
+                                else return undefined
+                            }
+                            //
+                            let pointMap = matchArray.map(item => getPoint(item))
+                            console.log(pointMap)
+                            uniqueArray = [...new Set(pointMap)]
+                            
+                            uniqueArray.forEach(ele => {
+                                if (ele !== undefined) L.marker(ele).addTo(mymap)
+                            })
+                        }
+
+                        searchInput.addEventListener("change", displayMatches);
+                        searchInput.addEventListener("keyup", (evt) => {
+                            if (searchInput.value === "" || searchInput.value === undefined) {
+                                restCount.innerHTML = 0
+                                suggest.innerHTML = 'This is going to be something in two weeks and scrollable. <br><h1>Scrollable!!!</h1>';
+                            } else {
+                                displayMatches(evt);
+                            }
+                        });
+                    }
+                    window.onload = windowActions;
+                </script>
+
+            </div>
+        </div>
+        <div class="column is-two-thirds" style="margin-top: -2px;">
+            <div class="box scroll">
+                <ul class="xd">This is scrollable.</ul>
+            </div>
+        </div>
+</div>
+</div>
+</div>
+
+</body>
+</div>
+
+</html>
