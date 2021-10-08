@@ -115,3 +115,7 @@ input {
   overflow-y: auto;
   overflow-x: hidden;
 }
+#mapid { 
+  height: 500px; 
+  width: 100%;
+}
