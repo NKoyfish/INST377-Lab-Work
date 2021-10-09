@@ -41,7 +41,6 @@ background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(14,16,45,1) 34%, rgba(1
 .column {
   display: flexbox;
   flex-direction: column;
-  padding:1rem;
 }
 .block {
   
@@ -55,12 +54,22 @@ background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(14,16,45,1) 34%, rgba(1
   padding: 0px;
 }
 li {
-  width: 100%;
+  font-weight: normal;
+  font-size:15px;
+  max-height: 200px;
+  height: fit-content;
   overflow:hidden;
-  text-align: left;
-  padding: 10%;
+  text-align: center;
   background: #07252ab4;
   color: rgb(255, 255, 255);
+  border-radius: 15px;
+  width: fit-content;
+}
+li:nth-child(odd) {
+  overflow:hidden;
+  background: #720d43b4;
+  color: rgb(255, 255, 255);
+  padding: 1px;
   border-radius: 15px;
   width: fit-content;
 }
@@ -70,10 +79,18 @@ li:hover {
   background-color: sandybrown;
   font-weight: bold;
 }
+.inlinestuff{
+  padding: none;
+  margin: 0;
+  display:flex;
+  width: inherit;
+}
 input {
+  position: relative;
+  top: -13px;
   padding: 2%;
   background-color: aliceblue;
-  border-radius: 15px;
+  border-radius:   15px  0 0 15px;
   width: 100%;
 }
 .container {
@@ -92,14 +109,7 @@ span p span{
   color: #b33f62;
   font-family: inherit;
 }
-.button {
-  width: 33%;
-  height: 100%;
-  border: none;
-  border-radius: 15px;
-  background-color: #f9564f;
-  overflow:hidden;
-}
+
 .centerCol {
   padding-left: 10%;
 }
@@ -119,14 +129,37 @@ span p span{
   max-height: 860px ;
   overflow-y: auto;
   overflow-x: hidden;
+  min-height: 44px;
 }
 #mapid { 
-  border-radius: 10px;
-  height: 500px; 
-  width: 100%;
+  margin-left: 10%;
+  margin-right: 10%;
+  height: 850px; 
+  padding: auto;
+  width: auto;
 }
+
 .butPlot{
   display: inline-flex;
   position: relative;
   align-self: center;
+}
+.plot {
+  cursor: pointer;
+  display: flex;
+  width: 20%;
+  position: relative;
+  justify-content: center;
+  top: -13px;
+  padding: 2%;
+  background-color: aliceblue;
+  border-radius: 0  15px  15px 0;
+}
+.submit:hover{
+  
+  background-color: rgb(94, 128, 160);
+  color:white;
+}
+#mapid{
+  border-radius: 15px;
 }

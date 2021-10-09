@@ -6,7 +6,7 @@ async function windowActions() {
   function mapInit() {
     mymap = L.map('mapid').setView([38.974, -76.86609], 13);
     L.tileLayer(
-      'https://api.maptiler.com/maps/toner/{z}/{x}/{y}.png?key=0im19NFqvOVkTZzwiWhj',
+      'https://api.maptiler.com/maps/topo/{z}/{x}/{y}.png?key=0im19NFqvOVkTZzwiWhj',
       {
         attribution:
           '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>',
@@ -51,10 +51,10 @@ async function windowActions() {
       .map(
         (
           search
-        ) => `<div class="button"><li style ="width:100%">${search.name}<br>${search.category}
+        ) => `<li style ="width:100%">${search.name}<br>${search.category}
       <br>${search.address_line_1}
       <br>${search.city}
-      <br>${search.zip}<br></li></div>`
+      <br>${search.zip}<br></li>`
       )
       .join('');
     suggest.innerHTML = html;
@@ -93,7 +93,7 @@ async function windowActions() {
     });
     console.log(fullyUnique.length);
   }
-  buttonClick = document.querySelector('.click');
+  buttonClick = document.querySelector('.plot');
   buttonClick.addEventListener('click', plotResults);
   searchInput.addEventListener('change', displayMatches);
   searchInput.addEventListener('keyup', (evt) => {
