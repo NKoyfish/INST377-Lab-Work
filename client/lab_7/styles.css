@@ -121,6 +121,7 @@ span p span{
   overflow-x: hidden;
 }
 #mapid { 
+  border-radius: 10px;
   height: 500px; 
   width: 100%;
 }
