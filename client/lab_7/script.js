@@ -1,6 +1,3 @@
-const fullyUnique = [];
-const layerG = [];
-
 mymap = undefined;
 async function windowActions() {
   function mapInit() {
@@ -27,8 +24,6 @@ async function windowActions() {
   const searchInput = document.querySelector('.search');
   const suggest = document.querySelector('.xd');
   const restCount = document.querySelector('.count');
-  const uniqueArray = [];
-  const count = 0;
   console.log(restaur);
   fetch(endpoint);
 
@@ -59,8 +54,7 @@ async function windowActions() {
       .join('');
     suggest.innerHTML = html;
     restCount.innerHTML = matchArray.length;
-    const locationArr = [];
-
+  
     function getPoint(matchArrayElement) {
       if (
         matchArrayElement !== undefined
@@ -85,13 +79,9 @@ async function windowActions() {
         count = 2
       }
       if (ele !== undefined) {
-        if (!fullyUnique.includes(ele)) {
-          fullyUnique.push(ele);
-          L.marker(ele).addTo(mymap);
-        }
+        L.marker(ele).addTo(mymap);
       }
     });
-    console.log(fullyUnique.length);
   }
   buttonClick = document.querySelector('.plot');
   buttonClick.addEventListener('click', plotResults);
@@ -113,6 +103,4 @@ async function windowActions() {
   mapInit();
 }
 window.onload = windowActions;
-function getMarkers() {
-  console.log(fullyUnique);
-}
+
