@@ -1,4 +1,5 @@
 mymap = undefined;
+myMarkers = []
 async function windowActions() {
   function mapInit() {
     mymap = L.map('mapid').setView([38.974, -76.86609], 13);
@@ -79,7 +80,8 @@ async function windowActions() {
         count = 2
       }
       if (ele !== undefined) {
-        L.marker(ele).addTo(mymap);
+        let marker = L.marker(ele).addTo(mymap);
+        myMarkers.push(marker)
       }
     });
   }
@@ -95,6 +97,11 @@ async function windowActions() {
       document.addEventListener('keyup', control);
       function control(e) {
         if (e.keyCode === 13) {
+          if (myMarkers.length > 0){
+          myMarkers.forEach(marker => {
+            marker.remove()
+          })
+        }
           plotResults();
         }
       }
