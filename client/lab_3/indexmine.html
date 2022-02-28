@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <div class = "wrapper">
+  <head>
+    <meta charset='UTF-8'/>
+    <title>Nicholas Koy: Lab 3 Flexbox</title>
+    <link rel='stylesheet' href='styles.css'/>
+    <meta name='viewport'
+      content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
+    <nav>
+        <h1>Nicholas Koy Lab 3: Flexbox Demo</h1>
+    </nav>
+  </head>
+  <body>
+    
+    <div class='menu-container'>
+        <div class='menu'>
+            <div id='date'>s</div>
+            <div class='signup'><div class ='menu-links'><a style ='color: white; text-decoration: none;' href='database.html'>Database Demos</a></div></div>
+            <div class='login'><div class ='menu-links'><a style ='color: white; text-decoration: none;' href='index.html'>Main Page</a></div></div>
+          </div>
+    </div>
+    <div class='header-container'>
+        <div class='header'>
+          <div class='subscribe'>Group Project Link&#9662;</div>
+          <div class='logo'><img src='images/awesome-logo.svg'/></div>
+          <a class = 'social' style ='text-decoration: none;' href='https://github.com/NKoyfish/INST377-Lab-Work'>My Github</a>
+        </div>
+    </div>
+    <div class='photo-grid-container'>
+        <div class='photo-grid'>
+          <div class='carousel'>
+            <div class='carousel__item carousel__item--visible'>
+              <img src='images/one.svg'/>
+            </div>
+            <div class='carousel__item'>
+              <img src='images/two.svg'/>
+            </div>
+            <div class='carousel__item'>
+              <img src='images/three.svg'/>
+            </div>
+            <div class='carousel__item'>
+              <img src='images/four.svg'/>
+            </div>
+            <div class='carousel__item'>
+              <img src='images/five.svg'/>
+            </div>
+            <div class ="carousel_actions">
+              <button id="carousel__button--prev" aria-label="Next slide"><</button>
+              <button id="carousel__button--next" aria-label="Previous slide">></button>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class='footer'>
+        <div class='footer-item footer-one'><span>footer-item 1</span></div>
+        
+        <div class='footer-item footer-two'><span>footer-item 2</span></div>
+        <div class='footer-item footer-three'><span>footer-item 3</span></div>
+      </div>
+      <script type = 'text/javascript'>
+        const date = new Date();
+        const day = date.getDate();
+        const month = date.getMonth()+1;
+        const year = date.getFullYear();
+        var d = month+ '/' + day + '/' + year;
+        document.getElementById('date').innerHTML = d;
+    </script>
+  </body>
+</div>
+</html>
