@@ -1,0 +1,53 @@
+<head>
+    <meta charset='UTF-8' />
+    <title>Nnamdi Lab 5</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel='stylesheet' href='styles.css' />
+</head>
+
+<body>
+    <div class="container">
+        <div class="columns is-centered">
+            <div class="column is-full">
+                <div class="box title">Nnamdi's Lab 5</div>
+            </div>
+        </div>
+        <div class="columns">
+            <div class="column">
+                <form action='' method='get' class='speaker-form'>
+                    <div class='form-row'>
+                        <div class="field">
+                            <label for="fname" class="label">First Name</label>
+                            <div class="control">
+                                <input type="text" name="fname" id="fname">
+                            </div>
+                        </div>
+                    </div>
+                    <div class='form-row'>
+                        <div class="field">
+                            <label for="FoodPref" class="label">Food Preferences</label>
+                            <div class="control">
+                                <input type="text" name="FoodPref" id="FoodPref">
+                            </div>
+                            <fieldset class='legacy-form-row'>
+                                <legend>Vegan or Veggie ? </legend>
+                                <input id='talk-type-1' name='talk-type' type='radio' value='Yes' />
+                                <label for='talk-type-1' class='radio-label'>Yes</label>
+                                <input id='talk-type-2' name='talk-type' type='radio' value='No' checked />
+                                <label for='talk-type-2' class='radio-label'>No</label>
+                            </fieldset>
+                        </div>
+                            <div class='form-row'>
+                                <button>Submit</button>
+                            </div>     
+                </form>
+            </div>
+            </div>
+            <div class="column"><div class="box">This is going to be something</div></div>
+        </div>
+    </div>
+
+    <script src="script.js "></script>
+</body>
+
+</html>
