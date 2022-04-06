@@ -1,0 +1,70 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lab 8: HTML Forms</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="mapstyle.css" />
+  <!-- Leaftlet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin="" />
+  <!-- Make sure you put this AFTER Leaflet's CSS -->
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="container">
+      <div class="box pale_yellow">Prof A's Lab 8</div>
+      <div class="columns">
+        <div class="box">
+          <form class="main_form submit-form">
+            <div class="field">
+              <label for="resto_name" class="label">Restaurant Name</label>
+              <div class="control">
+                <input type="text" name="resto_name" id="resto_name" />
+              </div>
+            </div>
+            <div class="field">
+              <label for="food_type" class="label">Food Type</label>
+              <div class="control">
+                <input type="text" name="food_type" id="food_type" />
+              </div>
+            </div>
+            <div class="field">
+              <label for="veg" class="label">Veggie or Vegan?</label>
+              <div class="control">
+                <div>
+                  <label for="veg" class="radio">Yes</label>
+                  <input type="radio" name="veg" id="veg" />
+                </div>
+                <div>
+                  <label for="veg" class="radio">No</label>
+                  <input type="radio" name="veg" id="veg" />
+                </div>
+              </div>
+            </div>
+            <button type="submit" class="class primary">Load List</button>
+          </form>
+        </div>
+        <div class="right grow-2">
+          <div class="box">
+            <div id="mymap"></div>
+          </div>
+          <div class="box">
+            <h4 class="title">Restaurants List</h4>
+            <ul class="list" id="resto-list"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="./script.js"></script>
+</body>
+
+</html>

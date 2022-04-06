@@ -71,6 +71,9 @@ async function windowActions() {
     pointMap = matchArray.map((item) => getPoint(item));
   }
   function plotResults() {
+    myMarkers.forEach((marker) => {
+      marker.remove();
+    });
     let count = 0;
     pointMap.forEach((ele) => {
       if (count === 0) {
@@ -78,7 +81,7 @@ async function windowActions() {
         count = 2;
       }
       if (ele !== undefined) {
-        let marker = L.marker(ele).addTo(mymap);
+        const marker = L.marker(ele).addTo(mymap);
         myMarkers.push(marker);
       }
     });
