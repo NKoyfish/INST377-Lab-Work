@@ -81,7 +81,7 @@ async function mainEvent() {
   submitButton.style.display = "none";
 
   // if we dont have the data stored in our browser we load the data from the API
-  if (localStorage.getItem(restVar) === undefined) {
+  if (!localStorage.getItem(restVar)) {
     const results = await fetch(
       "https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json"
     ); // This accesses some data from our API
