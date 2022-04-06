@@ -91,7 +91,7 @@ async function mainEvent() {
   // if we do have our data stored on ourr browser we can just grab it
   const storedDataString = localStorage.getItem(restVar); // Reads the stored data and returns it
   const storedDataArray = JSON.parse(storedDataString); // Converts the stored data to an array
-  console.log(storedDataArray);
+  console.log(storedDataString);
 
   if (storedDataArray.length > 0) {
     submitButton.style.display = "block";
