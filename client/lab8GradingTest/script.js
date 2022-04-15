@@ -106,54 +106,6 @@ async function mainEvent() {
   const storedDataArray = JSON.parse(storedDataString);
   console.log(storedDataArray);
 
-  // const arrayFromJson = {data: []};
-
-  if (storedDataArray?.length > 0) {
-    submit.style.display = 'block';
-
-    let currentArray = [];
-
-    resto.addEventListener('input', async (event) => {
-      console.log(event.target.value);
-
-      if (currentArray.length < 1) {
-        return;
-      }
-
-      const selectResto = storedDataArray.filter((item) => {
-        const lowerName = item.name.toLowerCase();
-        const lowerValue = event.target.value.toLowerCase();
-        return lowerName.includes(lowerValue);
-      });
-
-      console.log(selectResto);
-      createHtmlList(selectResto);
-      addMapMarkers(map, selectResto);
-    });
-
-    zipcode.addEventListener('input', async (events) => {
-      console.log(events.target.value);
-
-      if (currentArray.length < 1) {
-        return;
-      }
-
-      const selectZip = currentArray.filter((item) => item.zip.includes(events.target.value));
-
-      console.log(selectZip);
-      createHtmlList(selectZip);
-      addMapMarkers(map, selectZip);
-    });
-
-    form.addEventListener('submit', async (submitEvent) => {
-      submitEvent.preventDefault();
-      // console.log('form submission');
-      currentArray = dataHandler(storedDataArray);
-      console.log(currentArray);
-      createHtmlList(currentArray);
-      addMapMarkers(map, currentArray);
-    });
-  }
 }
 
 // this actually runs first! It's calling the function above
